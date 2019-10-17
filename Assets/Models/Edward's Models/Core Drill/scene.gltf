@@ -1,0 +1,287 @@
+{
+  "accessors": [
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 47743,
+      "max": [
+        0.99370002746582031,
+        0.99370002746582031,
+        1.6508899927139282
+      ],
+      "min": [
+        -0.99370002746582031,
+        -0.99370002746582031,
+        -1.0232700109481812
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 572916,
+      "componentType": 5126,
+      "count": 47743,
+      "max": [
+        0.99982285499572754,
+        0.99976593255996704,
+        0.99984526634216309
+      ],
+      "min": [
+        -0.99948799610137939,
+        -0.99962013959884644,
+        -1
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 123492,
+      "max": [
+        47742
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1145832,
+      "componentType": 5126,
+      "count": 1546,
+      "max": [
+        1,
+        1,
+        1
+      ],
+      "min": [
+        -1,
+        -1,
+        -6.9826498031616211
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1164384,
+      "componentType": 5126,
+      "count": 1546,
+      "max": [
+        1,
+        1,
+        1
+      ],
+      "min": [
+        -1,
+        -1,
+        -1
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 493968,
+      "componentType": 5125,
+      "count": 9180,
+      "max": [
+        1545
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "ibbolia (https://sketchfab.com/ibbolia)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/gurren-lagann-core-drill-558c7a29208b474fb727d7482cc0be39",
+      "title": "Gurren Lagann Core Drill"
+    },
+    "generator": "Sketchfab-6.24.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 530688,
+      "byteOffset": 0,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1182936,
+      "byteOffset": 530688,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 1713624,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": false,
+      "name": "Material.001",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.79910273801440812,
+          0.3467040563550296,
+          0.013702083047289676,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.20000000298023224
+      }
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "Material.002",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.18116424424986022,
+          0.18116424424986022,
+          0.18116424424986022,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.20000000298023224
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "mDrillBit_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0
+          },
+          "indices": 2,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "mBase_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 4,
+            "POSITION": 3
+          },
+          "indices": 5,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode (gltf orientation matrix)",
+      "rotation": [
+        -0.70710678118654746,
+        -0,
+        -0,
+        0.70710678118654757
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "RootNode (model correction matrix)"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "Root"
+    },
+    {
+      "children": [
+        4,
+        5
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0.99197999999999997,
+        1
+      ],
+      "name": "mDrillBit"
+    },
+    {
+      "mesh": 0,
+      "name": "mDrillBit_0"
+    },
+    {
+      "children": [
+        6
+      ],
+      "matrix": [
+        1.1515,
+        0,
+        0,
+        0,
+        0,
+        1.1515,
+        0,
+        0,
+        0,
+        0,
+        0.20350000000000001,
+        0,
+        0,
+        0,
+        -1.2267699999999999,
+        1
+      ],
+      "name": "mBase"
+    },
+    {
+      "mesh": 1,
+      "name": "mBase_0"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "OSG_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}
+
