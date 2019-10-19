@@ -39,8 +39,8 @@ public class Size_Button : MonoBehaviour
             Vector3 test = trackedAlias.localPosition;
             normal.SetActive(false);
             big.SetActive(true);
-            trackedAlias.localScale += new Vector3(5, 5, 5);
-            trackedAlias.localPosition = new Vector3(3, test.y, 10);
+            trackedAlias.localScale += new Vector3(test.x, 5,test.z);
+            //trackedAlias.localPosition = new Vector3(3, test.y, 10);
             roof.SetActive(false);
         }
         else if (collision.gameObject.name == "Right Interactor" && normal.activeSelf == true && this.gameObject.name == "Shrink Button")
@@ -49,14 +49,14 @@ public class Size_Button : MonoBehaviour
             normal.SetActive(false);
             small.SetActive(true);
             trackedAlias.localScale -= new Vector3(0.8f, 0.8f, 0.8f);
-            trackedAlias.localPosition = new Vector3(0, test.y, -2);
+            trackedAlias.localPosition = new Vector3(2, test.y, -2);
         }
         else if (collision.gameObject.name == "Right Interactor" && big.activeSelf == true && this.gameObject.name == "Shrink Button")
         {
             Vector3 test = trackedAlias.localPosition;
             big.SetActive(false);
             normal.SetActive(true);
-            trackedAlias.localScale += new Vector3(5, 5, 5);
+            trackedAlias.localScale -= new Vector3(test.x, 5, test.z);
             trackedAlias.localPosition = new Vector3(0, test.y, 0);
             roof.SetActive(true);
         }
