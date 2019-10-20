@@ -12,6 +12,7 @@ public class Size : MonoBehaviour
     public GameObject smallButton;
     public GameObject normalButton;
     public GameObject roof;
+    public GameObject UnityXRCameraRig;
     public Transform trackedAlias;
     public GameObject camera;
     public GameObject leftControl;
@@ -53,67 +54,118 @@ public class Size : MonoBehaviour
             small = false;
             normal = true;
         }
-        if (normal == true && Input.GetKeyDown("b"))
+        if (UnityXRCameraRig.activeSelf == false)
         {
-            //Vector3 test = trackedAlias.localPosition;
+            if (normal == true && Input.GetKeyDown("b"))
+            {
+                //Vector3 test = trackedAlias.localPosition;
 
-            normal = false;
-            large = true;
-            //trackedAlias.localScale += new Vector3(5, 5, 5);
-            //trackedAlias.localScale += new Vector3(5, 5, 5);
-            //trackedAlias.localPosition = new Vector3(-7, test.y, 20);
-            camera.transform.localPosition += new Vector3(0, 10, 0);
-            //rightControl.transform.localPosition += new Vector3(0, 8, 0);
-            //leftControl.transform.localPosition += new Vector3(0, 8, 0);
-            roof.SetActive(false);
-            bigButton.SetActive(true);
-            normalButton.SetActive(false);
+                normal = false;
+                large = true;
+                //trackedAlias.localScale += new Vector3(5, 5, 5);
+                //trackedAlias.localScale += new Vector3(5, 5, 5);
+                //trackedAlias.localPosition = new Vector3(-7, test.y, 20);
+                camera.transform.localPosition += new Vector3(0, 10, 0);
+                //rightControl.transform.localPosition += new Vector3(0, 8, 0);
+                //leftControl.transform.localPosition += new Vector3(0, 8, 0);
+                roof.SetActive(false);
+                bigButton.SetActive(true);
+                normalButton.SetActive(false);
+            }
+            else if (large == true && Input.GetKeyDown("l"))
+            {
+                //Vector3 test = trackedAlias.localPosition;
+
+                normal = true;
+                large = false;
+                //trackedAlias.localScale -= new Vector3(5, 5, 5);
+                //trackedAlias.localScale -= new Vector3(5, 5, 5);
+                //trackedAlias.localPosition = new Vector3(0, test.y, 0);
+                camera.transform.localPosition -= new Vector3(0, 10, 0);
+                //rightControl.transform.localPosition -= new Vector3(0, 10, 0);
+                //leftControl.transform.localPosition -= new Vector3(0, 10, 0);
+
+                roof.SetActive(true);
+                normalButton.SetActive(true);
+                bigButton.SetActive(false);
+
+                //trackedAlias.localPosition = new Vector3(-7, 0, 20);
+            }
+            else if (normal == true && Input.GetKeyDown("l"))
+            {
+                normal = false;
+                small = true;
+                //trackedAlias.localScale -= new Vector3(0.8f, 0.8f, 0.8f);
+                camera.transform.localPosition -= new Vector3(0, 1.25f, 0);
+                leftControl.transform.localScale -= new Vector3(0.2f, 0.2f, 0.2f);
+                rightControl.transform.localScale -= new Vector3(0.2f, 0.2f, 0.2f);
+                //rightControl.transform.localPosition -= new Vector3(0, 1f, 0);
+                //leftControl.transform.localPosition -= new Vector3(0, 1f, 0);
+                smallButton.SetActive(true);
+                normalButton.SetActive(false);
+            }
+            else if (small == true && Input.GetKeyDown("b"))
+            {
+                normal = true;
+                small = false;
+                //trackedAlias.localScale += new Vector3(0.8f, 0.8f, 0.8f);
+                camera.transform.localPosition += new Vector3(0, 1.25f, 0);
+                leftControl.transform.localScale += new Vector3(0.2f, 0.2f, 0.2f);
+                rightControl.transform.localScale += new Vector3(0.2f, 0.2f, 0.2f);
+                //rightControl.transform.localPosition += new Vector3(0, 1f, 0);
+                //leftControl.transform.localPosition += new Vector3(0, 1f, 0);
+                normalButton.SetActive(true);
+                smallButton.SetActive(false);
+            }
         }
-        else if (large == true && Input.GetKeyDown("l"))
+        else
         {
-            //Vector3 test = trackedAlias.localPosition;
+            if (normal == true && Input.GetKeyDown("b"))
+            {
+                Vector3 test = trackedAlias.localPosition;
 
-            normal = true;
-            large = false;
-            //trackedAlias.localScale -= new Vector3(5, 5, 5);
-            //trackedAlias.localScale -= new Vector3(5, 5, 5);
-            //trackedAlias.localPosition = new Vector3(0, test.y, 0);
-            camera.transform.localPosition -= new Vector3(0, 10, 0);
-            //rightControl.transform.localPosition -= new Vector3(0, 10, 0);
-            //leftControl.transform.localPosition -= new Vector3(0, 10, 0);
+                normal = false;
+                large = true;
+                //trackedAlias.localScale += new Vector3(5, 5, 5);
+                trackedAlias.localScale += new Vector3(5, 5, 5);
+                //trackedAlias.localPosition = new Vector3(-7, test.y, 20);
+                roof.SetActive(false);
+                bigButton.SetActive(true);
+                normalButton.SetActive(false);
+            }
+            else if (large == true && Input.GetKeyDown("l"))
+            {
+                Vector3 test = trackedAlias.localPosition;
 
-            roof.SetActive(true);
-            normalButton.SetActive(true);
-            bigButton.SetActive(false);
+                normal = true;
+                large = false;
+                //trackedAlias.localScale -= new Vector3(5, 5, 5);
+                trackedAlias.localScale -= new Vector3(5, 5, 5);
+                //trackedAlias.localPosition = new Vector3(0, test.y, 0);
+                roof.SetActive(true);
+                normalButton.SetActive(true);
+                bigButton.SetActive(false);
 
-            //trackedAlias.localPosition = new Vector3(-7, 0, 20);
+                //trackedAlias.localPosition = new Vector3(-7, 0, 20);
+            }
+            else if (normal == true && Input.GetKeyDown("l"))
+            {
+                normal = false;
+                small = true;
+                trackedAlias.localScale -= new Vector3(0.8f, 0.8f, 0.8f);
+                smallButton.SetActive(true);
+                normalButton.SetActive(false);
+            }
+            else if (small == true && Input.GetKeyDown("b"))
+            {
+                normal = true;
+                small = false;
+                trackedAlias.localScale += new Vector3(0.8f, 0.8f, 0.8f);
+                normalButton.SetActive(true);
+                smallButton.SetActive(false);
+            }
         }
-        else if (normal == true && Input.GetKeyDown("l"))
-        {
-            normal = false;
-            small = true;
-            //trackedAlias.localScale -= new Vector3(0.8f, 0.8f, 0.8f);
-            camera.transform.localPosition -= new Vector3(0, 1.25f, 0);
-            leftControl.transform.localScale -= new Vector3(0.2f, 0.2f, 0.2f);
-            rightControl.transform.localScale -= new Vector3(0.2f, 0.2f, 0.2f);
-            //rightControl.transform.localPosition -= new Vector3(0, 1f, 0);
-            //leftControl.transform.localPosition -= new Vector3(0, 1f, 0);
-            smallButton.SetActive(true);
-            normalButton.SetActive(false);
-        }
-        else if (small == true && Input.GetKeyDown("b"))
-        {
-            normal = true;
-            small = false;
-            //trackedAlias.localScale += new Vector3(0.8f, 0.8f, 0.8f);
-            camera.transform.localPosition += new Vector3(0, 1.25f, 0);
-            leftControl.transform.localScale += new Vector3(0.2f, 0.2f, 0.2f);
-            rightControl.transform.localScale += new Vector3(0.2f, 0.2f, 0.2f);
-            //rightControl.transform.localPosition += new Vector3(0, 1f, 0);
-            //leftControl.transform.localPosition += new Vector3(0, 1f, 0);
-            normalButton.SetActive(true);
-            smallButton.SetActive(false);
-        }
+        
         /*if (bigButton.activeSelf == true)
         {
             large = true;
