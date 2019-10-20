@@ -6,6 +6,7 @@ public class Spin : MonoBehaviour
 {
     // Start is called before the first frame update
     private bool on;
+    public AudioSource drill;
     void Start()
     {
         on = false;
@@ -25,6 +26,7 @@ public class Spin : MonoBehaviour
     {
         if (collision.gameObject.name == "Right Interactor" && on == false)
         {
+            drill.Play();
             on = true;
         }
         else if (collision.gameObject.name == "Right Interactor" && on == true)
